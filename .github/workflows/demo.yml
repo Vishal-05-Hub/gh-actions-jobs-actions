@@ -49,16 +49,16 @@ jobs:
           #   dist
           #   package.json
   deploy:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Get Build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-files
-      - name: Output content
-        run: ls
-      - name: Output Filename
-        run: echo "${{ needs.build.outputs.script-file }}"
+#       - name: Get Build artifacts
+#         uses: actions/download-artifact@v3
+#         with:
+#           name: dist-files
+#       - name: Output content
+#         run: ls
+#       - name: Output Filename
+#         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
